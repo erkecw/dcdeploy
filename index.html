@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeFlow | Visual Development Platform</title>
+    <title>Creativa AI | Intelligent Content Creation Suite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,16 +14,16 @@
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9fbfd;
+            color: #1a1e2b;
+            background-color: #fbfafc;
         }
         
         h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         
         .container {
@@ -33,20 +33,34 @@
             padding: 0 20px;
         }
         
+        /* ----- Color Theme (Purple & Amber) ----- */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #c4b5fd;
+            --secondary: #f59e0b;
+            --dark-bg: #0f0f1a;
+            --card-bg: #ffffff;
+            --gray-light: #f3f4f6;
+            --text-muted: #5b677b;
+        }
+        
         /* Header & Navigation */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
         }
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 18px 0;
         }
         
         .logo {
@@ -55,20 +69,26 @@
         }
         
         .logo-icon {
-            color: #4361ee;
-            font-size: 28px;
-            margin-right: 10px;
+            background: linear-gradient(135deg, #8b5cf6, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 30px;
+            margin-right: 12px;
         }
         
         .logo-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 26px;
             font-weight: 700;
-            color: #333;
+            color: #1a1e2b;
         }
         
         .logo-text span {
-            color: #4361ee;
+            background: linear-gradient(135deg, #8b5cf6, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .nav-links {
@@ -77,33 +97,51 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 36px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: #555;
+            color: #2d3a4a;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
         
         .nav-links a:hover {
-            color: #4361ee;
+            color: #8b5cf6;
         }
         
         .cta-button {
-            background-color: #4361ee;
+            background: linear-gradient(95deg, #8b5cf6, #a855f7);
             color: white;
             border: none;
             padding: 12px 28px;
-            border-radius: 6px;
+            border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
         }
         
         .cta-button:hover {
-            background-color: #3a56d4;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.35);
+            background: linear-gradient(95deg, #7c3aed, #9333ea);
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: #8b5cf6;
+            border: 2px solid #8b5cf6;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        
+        .secondary-button:hover {
+            background-color: #f5f3ff;
             transform: translateY(-2px);
         }
         
@@ -111,63 +149,52 @@
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: #333;
+            font-size: 26px;
+            color: #2d3a4a;
             cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            padding: 150px 0 100px;
-            background: linear-gradient(135deg, #f0f4ff 0%, #f9fbfd 100%);
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at 10% 30%, rgba(139, 92, 246, 0.05), rgba(245, 158, 11, 0.02));
         }
         
         .hero-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 40px;
         }
         
         .hero-text {
             flex: 1;
-            padding-right: 40px;
         }
         
         .hero-text h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
-            color: #222;
+            color: #0f172a;
         }
         
         .hero-text h1 span {
-            color: #4361ee;
+            background: linear-gradient(125deg, #8b5cf6, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .hero-text p {
             font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-            max-width: 600px;
+            color: #4a5568;
+            margin-bottom: 32px;
+            max-width: 550px;
         }
         
         .hero-buttons {
             display: flex;
-            gap: 15px;
-        }
-        
-        .secondary-button {
-            background-color: white;
-            color: #4361ee;
-            border: 2px solid #4361ee;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .secondary-button:hover {
-            background-color: #f0f4ff;
+            gap: 18px;
+            flex-wrap: wrap;
         }
         
         .hero-image {
@@ -177,28 +204,30 @@
         
         .hero-image img {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(67, 97, 238, 0.15);
+            border-radius: 32px;
+            box-shadow: 0 35px 50px -20px rgba(139, 92, 246, 0.35);
+            border: 1px solid rgba(139, 92, 246, 0.15);
         }
         
-        /* Features Section */
+        /* Section Title */
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 64px;
         }
         
         .section-title h2 {
-            font-size: 36px;
-            color: #222;
-            margin-bottom: 15px;
+            font-size: 38px;
+            color: #0f172a;
+            margin-bottom: 16px;
         }
         
         .section-title p {
-            color: #666;
-            max-width: 700px;
+            color: #5b677b;
+            max-width: 680px;
             margin: 0 auto;
         }
         
+        /* Features Grid */
         .features {
             padding: 100px 0;
             background-color: white;
@@ -212,69 +241,78 @@
         
         .feature-card {
             background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 32px 28px;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid #f0eef7;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            border-color: #d9c7fc;
+            box-shadow: 0 25px 35px -12px rgba(139, 92, 246, 0.15);
         }
         
         .feature-icon {
-            background-color: #eef2ff;
-            color: #4361ee;
+            background: linear-gradient(145deg, #f3e8ff, #ede9fe);
+            color: #8b5cf6;
             width: 70px;
             height: 70px;
-            border-radius: 50%;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 28px;
+            margin-bottom: 24px;
+            font-size: 30px;
         }
         
         .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 24px;
+            margin-bottom: 14px;
         }
         
         .feature-card p {
-            color: #666;
+            color: #5b677b;
         }
         
-        /* Benefits Section */
+        /* Benefits Section (stats / alternate style) */
         .benefits {
             padding: 100px 0;
-            background-color: #f0f4ff;
+            background: #fefcf9;
         }
         
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
         }
         
         .benefit-item {
             text-align: center;
             padding: 30px 20px;
+            background: white;
+            border-radius: 32px;
+            transition: transform 0.2s;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.02);
         }
         
         .benefit-icon {
-            color: #4361ee;
-            font-size: 40px;
-            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 44px;
+            margin-bottom: 18px;
         }
         
         .benefit-item h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 24px;
+            margin-bottom: 12px;
         }
         
         .benefit-item p {
-            color: #666;
+            color: #5b677b;
         }
         
         /* Testimonials */
@@ -284,24 +322,26 @@
         }
         
         .testimonial-slider {
-            max-width: 800px;
+            max-width: 880px;
             margin: 0 auto;
-            position: relative;
         }
         
         .testimonial {
-            background: #f9fbfd;
-            padding: 40px;
-            border-radius: 10px;
+            background: #fefaf5;
+            padding: 48px 44px;
+            border-radius: 40px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f5ede3;
         }
         
         .testimonial-text {
-            font-size: 18px;
-            font-style: italic;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 450;
             margin-bottom: 30px;
-            color: #555;
+            color: #2d3748;
+            line-height: 1.5;
         }
         
         .testimonial-author {
@@ -313,149 +353,148 @@
         .author-avatar {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-right: 15px;
+            border-radius: 60px;
+            background: linear-gradient(125deg, #8b5cf6, #c084fc);
+            margin-right: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #4361ee;
-            font-size: 24px;
+            color: white;
+            font-size: 22px;
         }
         
         .author-info h4 {
             font-size: 18px;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         
         .author-info p {
-            color: #777;
+            color: #a17f6f;
             font-size: 14px;
         }
         
-        /* Pricing Section */
+        /* Pricing */
         .pricing {
             padding: 100px 0;
-            background-color: #f9fbfd;
+            background: #fefcf9;
         }
         
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
         
         .pricing-card {
             background: white;
-            border-radius: 10px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 36px;
+            padding: 42px 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.25s;
+            border: 1px solid #f0e6f5;
         }
         
         .pricing-card.featured {
-            border-top: 5px solid #4361ee;
-            transform: scale(1.05);
-            position: relative;
+            border-top: 5px solid #f59e0b;
+            transform: scale(1.02);
+            background: #ffffff;
+            box-shadow: 0 28px 40px -12px rgba(139, 92, 246, 0.2);
         }
         
         .featured-badge {
             position: absolute;
-            top: -12px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #4361ee;
+            background: #f59e0b;
             color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
+            padding: 6px 22px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
+        .pricing-card {
+            position: relative;
         }
         
         .plan-name {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #0f172a;
         }
         
         .plan-price {
             font-size: 48px;
-            font-weight: 700;
-            color: #4361ee;
-            margin-bottom: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #8b5cf6, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 24px;
         }
         
         .plan-price span {
             font-size: 16px;
-            color: #777;
+            color: #7e8b9c;
+            font-weight: 400;
         }
         
         .plan-features {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
         
         .plan-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            color: #555;
-        }
-        
-        .plan-features li:last-child {
-            border-bottom: none;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0ecef;
+            color: #334155;
         }
         
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+            background: linear-gradient(115deg, #0f0c1f 0%, #201c3b 100%);
             text-align: center;
             color: white;
         }
         
         .cta-section h2 {
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 20px;
         }
         
         .cta-section p {
             font-size: 18px;
             max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+            margin: 0 auto 32px;
+            opacity: 0.85;
         }
         
         .cta-section .cta-button {
-            background-color: white;
-            color: #4361ee;
-            font-size: 16px;
-            padding: 15px 40px;
+            background: white;
+            color: #8b5cf6;
+            box-shadow: none;
         }
         
         .cta-section .cta-button:hover {
-            background-color: #f0f4ff;
+            background: #fef9e6;
+            transform: translateY(-3px);
         }
         
         /* Footer */
         footer {
-            background-color: #222;
-            color: #ccc;
+            background-color: #0f0c1a;
+            color: #b9c2d4;
             padding: 70px 0 20px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
         }
@@ -475,45 +514,40 @@
         }
         
         .footer-links a {
-            color: #aaa;
+            color: #b9c2d4;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
         
         .footer-links a:hover {
-            color: #4361ee;
+            color: #c084fc;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
+            padding-top: 25px;
+            border-top: 1px solid #2a263b;
             font-size: 14px;
-            color: #888;
         }
         
-        /* Responsive Design */
+        /* responsive */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
-            }
-            
-            .hero-text {
-                padding-right: 0;
-                margin-bottom: 50px;
                 text-align: center;
             }
-            
+            .hero-text {
+                text-align: center;
+            }
             .hero-text p {
-                margin: 0 auto 30px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            
+            .hero-buttons {
+                justify-content: center;
+            }
             .pricing-card.featured {
-                transform: none;
-            }
-            
-            .pricing-card.featured:hover {
-                transform: translateY(-10px);
+                transform: scale(1);
             }
         }
         
@@ -521,69 +555,47 @@
             .nav-links {
                 display: none;
             }
-            
             .mobile-menu-btn {
                 display: block;
             }
-            
             .hero-text h1 {
-                font-size: 36px;
+                font-size: 38px;
             }
-            
             .section-title h2 {
-                font-size: 30px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-buttons button {
-                width: 100%;
-                max-width: 300px;
+                font-size: 32px;
             }
         }
         
         @media (max-width: 576px) {
             .hero {
-                padding: 130px 0 80px;
+                padding: 140px 0 70px;
             }
-            
-            .features, .benefits, .testimonials, .pricing, .cta-section {
-                padding: 70px 0;
-            }
-            
             .feature-card, .testimonial {
-                padding: 25px;
+                padding: 28px;
             }
-            
-            .plan-price {
-                font-size: 36px;
+            .testimonial-text {
+                font-size: 17px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <div class="logo-icon"><i class="fas fa-bezier-curve"></i></div>
-                    <div class="logo-text">Code<span>Flow</span></div>
+                    <div class="logo-icon"><i class="fas fa-magic"></i></div>
+                    <div class="logo-text">Creativa<span>AI</span></div>
                 </div>
-                
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#benefits">Impact</a></li>
+                    <li><a href="#testimonials">Stories</a></li>
+                    <li><a href="#pricing">Plans</a></li>
                     <li><a href="#">Resources</a></li>
                 </ul>
-                
-                <button class="cta-button">Start Free Trial</button>
-                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                <button class="cta-button">Start Creating</button>
+                <button class="mobile-menu-btn"><i class="fas fa-robot"></i></button>
             </nav>
         </div>
     </header>
@@ -593,15 +605,15 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Build Apps Faster With <span>Visual Development</span></h1>
-                    <p>CodeFlow empowers teams to create enterprise-grade applications with minimal coding. Drag, drop, and connect components to build powerful web and mobile apps in record time.</p>
+                    <h1>AI that writes, designs & <span>inspires</span> instantly</h1>
+                    <p>Creativa AI is the all‑in‑one content studio for creators, marketers, and dreamers — generate blogs, visuals, social copy, and more with next‑gen intelligence.</p>
                     <div class="hero-buttons">
-                        <button class="cta-button">Start Building Free</button>
-                        <button class="secondary-button">Watch Demo</button>
+                        <button class="cta-button">Try Creativa Free →</button>
+                        <button class="secondary-button">See live demo</button>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CodeFlow Platform Interface">
+                    <img src="https://images.unsplash.com/photo-1677442135136-760cae028db0?q=80&w=2070&auto=format&fit=crop" alt="AI creative dashboard concept">
                 </div>
             </div>
         </div>
@@ -611,101 +623,71 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Powerful Features for Rapid Development</h2>
-                <p>CodeFlow provides all the tools you need to build, deploy, and scale applications without writing extensive code.</p>
+                <h2>Everything you need to craft smarter content</h2>
+                <p>From first draft to final polish — our AI suite makes creative work 10x faster.</p>
             </div>
-            
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-th-large"></i>
-                    </div>
-                    <h3>Visual Builder</h3>
-                    <p>Drag and drop UI components to design responsive interfaces. Connect data sources with simple point-and-click actions.</p>
+                    <div class="feature-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>AI Writing Studio</h3>
+                    <p>Generate blogs, emails, ad copy, and long‑form articles in seconds with our GPT‑powered engine, tailored to your brand voice.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Integration</h3>
-                    <p>Connect to any data source with built-in connectors. Automatically generate CRUD operations without writing SQL.</p>
+                    <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Generative Design</h3>
+                    <p>Describe any visual concept and get stunning illustrations, social graphics, or product mockups — no design skills required.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Cross-Platform</h3>
-                    <p>Build once, deploy everywhere. Generate applications for web, iOS, and Android from a single visual design.</p>
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>SEO & Performance</h3>
+                    <p>Smart keyword suggestions, readability scoring, and real‑time optimization to rank higher and engage audiences.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Extensible with Code</h3>
-                    <p>Add custom functionality with JavaScript when needed. Our platform doesn't limit your creativity or complexity.</p>
+                    <div class="feature-icon"><i class="fas fa-language"></i></div>
+                    <h3>Multilingual Magic</h3>
+                    <p>Generate and translate content across 45+ languages while preserving tone, emotion, and cultural nuance.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Enterprise Security</h3>
-                    <p>Built-in authentication, authorization, and data encryption. SOC2 compliant with enterprise-grade security features.</p>
+                    <div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Publish Anywhere</h3>
+                    <p>One‑click exports to WordPress, Webflow, Shopify, or social schedulers. Seamless workflow integration.</p>
                 </div>
-                
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>One-Click Deployment</h3>
-                    <p>Deploy to cloud or on-premises with a single click. Automatic scaling and monitoring included.</p>
+                    <div class="feature-icon"><i class="fas fa-shield-heart"></i></div>
+                    <h3>Brand Safety & Ethics</h3>
+                    <p>Built‑in plagiarism detection, fact‑checker, and ethical AI guidelines — your reputation is protected.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Impact / Benefits Section -->
     <section class="benefits" id="benefits">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose CodeFlow?</h2>
-                <p>Join thousands of companies accelerating their digital transformation with low-code development.</p>
+                <h2>Creators love the measurable impact</h2>
+                <p>AI‑assisted workflows are rewriting the rules of productivity. See why teams switch to Creativa.</p>
             </div>
-            
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>10x Faster Development</h3>
-                    <p>Build applications in days instead of months with visual development tools.</p>
+                    <div class="benefit-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>83% faster production</h3>
+                    <p>From concept to publish, our users slash content creation time dramatically.</p>
                 </div>
-                
                 <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Reduce Costs by 70%</h3>
-                    <p>Lower development and maintenance costs with fewer resources required.</p>
+                    <div class="benefit-icon"><i class="fas fa-chart-simple"></i></div>
+                    <h3>2.5x engagement boost</h3>
+                    <p>Data‑backed AI suggestions increase social clicks and reader retention.</p>
                 </div>
-                
                 <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Citizen Developers</h3>
-                    <p>Enable business users to build solutions with minimal IT assistance.</p>
+                    <div class="benefit-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>65% lower content costs</h3>
+                    <p>Reduce dependency on external freelancers with in‑house AI tools.</p>
                 </div>
-                
                 <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Scale Effortlessly</h3>
-                    <p>From prototype to enterprise-scale applications with the same platform.</p>
+                    <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Unlock creativity</h3>
+                    <p>Eliminate blank‑page syndrome and iterate ideas like never before.</p>
                 </div>
             </div>
         </div>
@@ -715,20 +697,17 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Trusted by Industry Leaders</h2>
-                <p>See what our customers have to say about their experience with CodeFlow.</p>
+                <h2>Trusted by leading creators & enterprises</h2>
+                <p>Hear how Creativa AI transforms daily workflows and creative confidence.</p>
             </div>
-            
             <div class="testimonial-slider">
                 <div class="testimonial">
-                    <div class="testimonial-text">
-                        "CodeFlow transformed how we deliver solutions to our business units. What used to take 6 months now takes 3 weeks. Our development team can focus on complex problems while business teams build their own solutions."
-                    </div>
+                    <div class="testimonial-text">"Creativa AI didn’t just accelerate our blog production — it unlocked new creative directions we never imagined. Our content team grew from 4 to 12 people, but quality increased dramatically."</div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
+                        <div class="author-avatar">JD</div>
                         <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <p>CTO, TechGrowth Inc.</p>
+                            <h4>Jamie Duarte</h4>
+                            <p>Head of Content, Lumos Media</p>
                         </div>
                     </div>
                 </div>
@@ -740,49 +719,46 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the plan that fits your needs. All plans include core features with no hidden fees.</p>
+                <h2>Choose the plan that scales with you</h2>
+                <p>Simple, transparent pricing. All plans include core AI features, with no hidden surprises.</p>
             </div>
-            
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="plan-name">Starter</h3>
-                    <div class="plan-price">$29<span>/month</span></div>
+                    <div class="plan-price">$19<span>/month</span></div>
                     <ul class="plan-features">
-                        <li>Up to 5 users</li>
-                        <li>10 GB storage</li>
-                        <li>Basic components</li>
-                        <li>Community support</li>
-                        <li>1 production app</li>
+                        <li>50 AI generations / mo</li>
+                        <li>1 brand voice profile</li>
+                        <li>Standard templates</li>
+                        <li>Email support</li>
+                        <li>Basic analytics</li>
                     </ul>
-                    <button class="secondary-button">Get Started</button>
+                    <button class="secondary-button">Get Starter</button>
                 </div>
-                
                 <div class="pricing-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3 class="plan-name">Professional</h3>
-                    <div class="plan-price">$89<span>/month</span></div>
+                    <div class="featured-badge">🔥 Most popular</div>
+                    <h3 class="plan-name">Pro Creator</h3>
+                    <div class="plan-price">$59<span>/month</span></div>
                     <ul class="plan-features">
-                        <li>Up to 25 users</li>
-                        <li>100 GB storage</li>
-                        <li>All components</li>
-                        <li>Priority support</li>
-                        <li>10 production apps</li>
-                        <li>Custom branding</li>
+                        <li>Unlimited AI generations</li>
+                        <li>5 brand voice profiles</li>
+                        <li>Premium design & video AI</li>
+                        <li>Priority chat support</li>
+                        <li>SEO & content audit tools</li>
+                        <li>API access</li>
                     </ul>
-                    <button class="cta-button">Try Free for 14 Days</button>
+                    <button class="cta-button">Start free trial</button>
                 </div>
-                
                 <div class="pricing-card">
                     <h3 class="plan-name">Enterprise</h3>
                     <div class="plan-price">Custom</div>
                     <ul class="plan-features">
-                        <li>Unlimited users</li>
-                        <li>Unlimited storage</li>
-                        <li>All features included</li>
-                        <li>24/7 dedicated support</li>
-                        <li>Unlimited apps</li>
-                        <li>On-premises option</li>
+                        <li>Unlimited everything</li>
+                        <li>Custom AI model training</li>
+                        <li>SLA & dedicated manager</li>
+                        <li>On‑prem / VPC deployment</li>
+                        <li>Advanced compliance (SOC2)</li>
+                        <li>Team onboarding workshop</li>
                     </ul>
                     <button class="secondary-button">Contact Sales</button>
                 </div>
@@ -793,9 +769,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Start Building Today</h2>
-            <p>Join over 10,000 companies that use CodeFlow to accelerate their application development. No credit card required for the free trial.</p>
-            <button class="cta-button">Get Started for Free</button>
+            <h2>Start creating content that stands out</h2>
+            <p>Join 12,000+ creators, agencies, and brands already shaping the future with Creativa AI. No credit card required.</p>
+            <button class="cta-button">Claim your free credits →</button>
         </div>
     </section>
 
@@ -805,161 +781,158 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="logo">
-                        <div class="logo-icon"><i class="fas fa-bezier-curve"></i></div>
-                        <div class="logo-text">Code<span>Flow</span></div>
+                        <div class="logo-icon"><i class="fas fa-magic"></i></div>
+                        <div class="logo-text" style="color:white;">Creativa<span>AI</span></div>
                     </div>
-                    <p style="margin-top: 20px; color: #aaa;">The leading visual development platform for building enterprise applications with minimal coding.</p>
+                    <p style="margin-top: 20px; color: #9aa2b5;">The creative intelligence engine for modern storytellers.</p>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Product</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Features</a></li>
+                        <li><a href="#">AI Writer</a></li>
+                        <li><a href="#">Image Studio</a></li>
                         <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Use Cases</a></li>
                         <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Roadmap</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Resources</h3>
                     <ul class="footer-links">
                         <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">AI Academy</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Community</a></li>
-                        <li><a href="#">Support</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul class="footer-links">
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Legal</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="copyright">
-                <p>&copy; 2023 CodeFlow. All rights reserved.</p>
+                <p>© 2025 Creativa AI — Intelligent content creation. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            
-            // Adjust for mobile
-            if (window.innerWidth <= 768) {
-                if (navLinks.style.display === 'flex') {
+        // Mobile menu toggle (enhanced)
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileBtn.addEventListener('click', () => {
+            const isVisible = navLinks.style.display === 'flex';
+            navLinks.style.display = isVisible ? 'none' : 'flex';
+            if (window.innerWidth <= 768 && !isVisible) {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '28px 20px';
+                navLinks.style.boxShadow = '0 18px 30px rgba(0,0,0,0.08)';
+                navLinks.style.borderBottom = '1px solid #e9e0f5';
+                navLinks.style.zIndex = '999';
+                const lis = document.querySelectorAll('.nav-links li');
+                lis.forEach(li => li.style.margin = '12px 0');
+            } else if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.padding = '0';
+                navLinks.style.boxShadow = 'none';
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                    if (window.innerWidth <= 768) navLinks.style.display = 'none';
+                }
+            });
+        });
+        
+        // Testimonials array for auto rotation (new theme)
+        const testimonialData = [
+            { text: "Creativa AI didn’t just accelerate our blog production — it unlocked new creative directions we never imagined. Our content team grew from 4 to 12 people, but quality increased dramatically.", name: "Jamie Duarte", position: "Head of Content, Lumos Media", initials: "JD" },
+            { text: "The design AI alone saved us $5k/month on stock visuals. We now generate custom brand illustrations within minutes. Our social engagement skyrocketed.", name: "Michael Okafor", position: "CMO, Studio Nova", initials: "MO" },
+            { text: "Finally an AI platform that understands nuance. The multilingual copy sounds human, and the SEO suggestions are gold. Best investment for our agency.", name: "Elena Vasquez", position: "Founder, ContentFlow Agency", initials: "EV" }
+        ];
+        
+        let currentIdx = 0;
+        const testimonialDiv = document.querySelector('.testimonial');
+        function updateTestimonial() {
+            const t = testimonialData[currentIdx];
+            testimonialDiv.innerHTML = `
+                <div class="testimonial-text">"${t.text}"</div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">${t.initials}</div>
+                    <div class="author-info">
+                        <h4>${t.name}</h4>
+                        <p>${t.position}</p>
+                    </div>
+                </div>
+            `;
+        }
+        function rotateTestimonial() {
+            currentIdx = (currentIdx + 1) % testimonialData.length;
+            updateTestimonial();
+        }
+        setInterval(rotateTestimonial, 5500);
+        
+        // CTA button interactions (demo simulation)
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('✨ Welcome to Creativa AI! In the real product, you’d be redirected to the signup dashboard. Enjoy AI-powered creation!');
+            });
+        });
+        document.querySelectorAll('.secondary-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const planCard = btn.closest('.pricing-card');
+                if (planCard) {
+                    const planName = planCard.querySelector('.plan-name')?.innerText || 'plan';
+                    alert(`🚀 You selected the ${planName} plan. Next step: secure checkout.`);
+                } else {
+                    alert('📽️ Demo preview — explore AI features in our interactive sandbox.');
+                }
+            });
+        });
+        
+        // adjust mobile nav on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.padding = '0';
+                navLinks.style.backgroundColor = 'transparent';
+                navLinks.style.boxShadow = 'none';
+            } else {
+                if (navLinks.style.display !== 'flex') navLinks.style.display = 'none';
+                else {
+                    navLinks.style.display = 'flex';
                     navLinks.style.flexDirection = 'column';
                     navLinks.style.position = 'absolute';
                     navLinks.style.top = '80px';
                     navLinks.style.left = '0';
                     navLinks.style.width = '100%';
                     navLinks.style.backgroundColor = 'white';
-                    navLinks.style.padding = '20px';
-                    navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                    
-                    const navItems = document.querySelectorAll('.nav-links li');
-                    navItems.forEach(item => {
-                        item.style.margin = '10px 0';
-                    });
+                    navLinks.style.padding = '28px 20px';
+                    navLinks.style.boxShadow = '0 18px 30px rgba(0,0,0,0.08)';
                 }
             }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if(window.innerWidth <= 768) {
-                        document.querySelector('.nav-links').style.display = 'none';
-                    }
-                }
-            });
-        });
-        
-        // Simple testimonial slider
-        const testimonials = [
-            {
-                text: "CodeFlow transformed how we deliver solutions to our business units. What used to take 6 months now takes 3 weeks. Our development team can focus on complex problems while business teams build their own solutions.",
-                name: "Sarah Chen",
-                position: "CTO, TechGrowth Inc.",
-                initials: "SC"
-            },
-            {
-                text: "We reduced our app development time by 80% using CodeFlow. The visual interface made it easy for our analysts to build data dashboards without waiting for IT resources.",
-                name: "Marcus Johnson",
-                position: "Director of Operations, DataCorp",
-                initials: "MJ"
-            },
-            {
-                text: "As a non-technical founder, CodeFlow allowed me to build our MVP in just 2 months. I could test ideas quickly and iterate based on user feedback without deep coding knowledge.",
-                name: "Lisa Wang",
-                position: "Founder, StartupLabs",
-                initials: "LW"
-            }
-        ];
-        
-        let currentTestimonial = 0;
-        const testimonialElement = document.querySelector('.testimonial');
-        
-        function rotateTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            updateTestimonial();
-        }
-        
-        function updateTestimonial() {
-            const testimonial = testimonials[currentTestimonial];
-            testimonialElement.innerHTML = `
-                <div class="testimonial-text">"${testimonial.text}"</div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">${testimonial.initials}</div>
-                    <div class="author-info">
-                        <h4>${testimonial.name}</h4>
-                        <p>${testimonial.position}</p>
-                    </div>
-                </div>
-            `;
-        }
-        
-        // Auto-rotate testimonials every 5 seconds
-        setInterval(rotateTestimonial, 5000);
-        
-        // CTA button interactions
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Thank you for your interest in CodeFlow! You would be redirected to the signup page in a real implementation.');
-            });
-        });
-        
-        // Pricing card interactions
-        document.querySelectorAll('.pricing-card button').forEach(button => {
-            button.addEventListener('click', function() {
-                const planName = this.closest('.pricing-card').querySelector('.plan-name').textContent;
-                alert(`You selected the ${planName} plan. In a real implementation, you would be redirected to the checkout process.`);
-            });
         });
     </script>
 </body>
